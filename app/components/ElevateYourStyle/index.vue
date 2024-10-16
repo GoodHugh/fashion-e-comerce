@@ -38,6 +38,7 @@
     justify-content: flex-end;
     align-items: start;
     gap: 20px;
+    padding-left: 32px;
   }
 
   &__body-text {

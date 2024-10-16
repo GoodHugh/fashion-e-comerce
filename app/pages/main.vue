@@ -8,4 +8,5 @@ definePageMeta({
   <TopBar />
   <Header />
   <ElevateYourStyle />
+  <ElevateLifestyle />
 </template>
