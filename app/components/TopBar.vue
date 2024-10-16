@@ -9,24 +9,19 @@
 <style lang="scss">
 .top-bar {
   background-color: $color-black-1;
-}
 
-.top-bar__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  &__container-item {
+    color: $color-white-1;
+    font-size: 11px;
+    padding: 12px 0;
+    text-align: center;
 
-.top-bar__container-item {
-  color: $color-white-1;
-  font-size: 11px;
-  padding: 12px 0;
+    &::after {
+      content: 'Complimentary U.S. No-Rush Shipping on orders of $95 or more. Shop now';
 
-  &::after {
-    content: 'Complimentary U.S. No-Rush Shipping on orders of $95 or more. Shop now';
-
-    @media (max-width: $minWidth + px) {
-      content: "The Archive Sale is live. Starting at 20% off. Shop now.";
+      @media (max-width: $mobile) {
+        content: "The Archive Sale is live. Starting at 20% off. Shop now.";
+      }
     }
   }
 }

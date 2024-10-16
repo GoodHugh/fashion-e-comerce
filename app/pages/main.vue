@@ -6,4 +6,5 @@ definePageMeta({
 
 <template>
   <TopBar />
+  <Header />
 </template>
