@@ -7,4 +7,5 @@ definePageMeta({
 <template>
   <TopBar />
   <Header />
+  <ElevateYourStyle />
 </template>
