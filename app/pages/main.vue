@@ -10,4 +10,5 @@ definePageMeta({
   <ElevateYourStyle />
   <ElevateLifestyle />
   <WhatToWearNow />
+  <CollectionBanners />
 </template>
