@@ -11,4 +11,5 @@ definePageMeta({
   <ElevateLifestyle />
   <WhatToWearNow />
   <CollectionBanners />
+  <ArtOfFewer />
 </template>
