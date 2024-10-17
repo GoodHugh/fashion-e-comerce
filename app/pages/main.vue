@@ -9,4 +9,5 @@ definePageMeta({
   <Header />
   <ElevateYourStyle />
   <ElevateLifestyle />
+  <WhatToWearNow />
 </template>

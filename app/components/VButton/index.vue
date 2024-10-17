@@ -1,7 +1,6 @@
 <script setup lang="ts">
   interface Props {
-    title: string
-    theme: 'back' | 'white';
+    theme?: 'back' | 'white';
     handleClick?: () => void;
   }
 
