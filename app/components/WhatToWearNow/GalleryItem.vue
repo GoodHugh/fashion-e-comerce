@@ -2,7 +2,7 @@
   <div class="what-to-wear-now-gallery-item">
     <div class="what-to-wear-now-gallery-item__product">
       <img class="what-to-wear-now-gallery-item__product-img" :src="props.src" :alt="props.title" />
-      <button @click="toggleActive" class="what-to-wear-now-gallery-item__product-button">
+      <button @click="toggleDropdown" class="what-to-wear-now-gallery-item__product-button">
         <IconsPlus />
       </button>
       <div class="what-to-wear-now-gallery-item__product-modal" :class="modalClassListModifiers">
@@ -27,18 +27,19 @@ interface Props {
   title: string;
   price: string;
   palette: Array<string>;
+  isOpen: boolean;
 }
 
 const props = defineProps<Props>();
 
-const isActive = ref<boolean>(false);
-
-const classListActive = computed(() => isActive.value ? 'what-to-wear-now-gallery-item__product-modal--active' : '');
+const classListActive = computed(() => props.isOpen ? 'what-to-wear-now-gallery-item__product-modal--active' : '');
 
 const modalClassListModifiers = computed(() => [classListActive.value]);
 
-function toggleActive() {
-  isActive.value = !isActive.value;
+const emit = defineEmits(['toggle'])
+
+function toggleDropdown () {
+  emit('toggle')
 }
 
 </script>

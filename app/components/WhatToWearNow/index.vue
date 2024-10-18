@@ -8,12 +8,14 @@
 
           <div class="what-to-wear-now__body-gallery">
             <WhatToWearNowGalleryItem
-              v-for="item in data"
+              v-for="(item, index) in data"
               :key="item.title"
               :src="item.src"
               :title="item.title"
               :price="item.price"
               :palette="item.palette"
+              :isOpen="openIndex === index"
+              @toggle="handleToggle(index)"
             />
           </div>
       </div>
@@ -73,6 +75,16 @@ const data = {
       '#F5B4B4'
     ]
   },
+}
+
+const openIndex = ref<number | null>(null)
+
+const handleToggle = (index: number) => {
+  if (openIndex.value === index) {
+    openIndex.value = null
+  } else {
+    openIndex.value = index
+  }
 }
 </script>
 
