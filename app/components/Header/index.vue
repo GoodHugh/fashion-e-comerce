@@ -8,7 +8,7 @@
         <HeaderActionBar class="header__bar-last-item" />
       </div>
     </div>
-    <HeaderNavBarMobile :active="isActive" />
+    <HeaderNavBarMobile v-model:active="isActive" />
   </header>
 </template>
 

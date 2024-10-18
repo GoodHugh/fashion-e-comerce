@@ -12,4 +12,6 @@ definePageMeta({
   <WhatToWearNow />
   <CollectionBanners />
   <ArtOfFewer />
+  <ShopInstagram />
+  <Footer />
 </template>

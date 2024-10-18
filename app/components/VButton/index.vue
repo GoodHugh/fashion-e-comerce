@@ -2,10 +2,12 @@
   interface Props {
     theme?: 'back' | 'white';
     handleClick?: () => void;
+    type?: 'text' | 'submit';
   }
 
   const props = withDefaults(defineProps<Props>(), {
     theme: 'white',
+    type: 'text'
   });
 
   const classListTheme = computed(() => {
@@ -22,7 +24,7 @@
 </script>
 
 <template>
-  <button class="v-button" :class="classListModifiers" @click="handleClick">
+  <button class="v-button" :class="classListModifiers" @click.prevent="handleClick">
     <slot />
   </button>
 </template>
@@ -36,6 +38,11 @@
   &--white {
     color: $color-black-1;
     background-color: $color-white-2;
+  }
+
+  &--black {
+    color: $color-white-2;
+    background-color: $color-black-1;
   }
 }
 </style>

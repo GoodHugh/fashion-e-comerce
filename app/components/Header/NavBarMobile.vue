@@ -2,12 +2,12 @@
   <nav :class="classListModifiers" class="nav-bar-mobile">
     <ul class="nav-bar-mobile__list">
       <li class="nav-bar-mobile__list-item">
-        <NuxtLink class="nav-bar-mobile__list-item-nav" to="/">
+        <NuxtLink class="nav-bar-mobile__list-item-nav" to="#" @click="handleClick">
           <IconsUser />
         </NuxtLink>
       </li>
       <li class="nav-bar-mobile__list-item" v-for="item in dataNavbar">
-        <NuxtLink class="nav-bar-mobile__list-item-nav" :to="item.url">
+        <NuxtLink class="nav-bar-mobile__list-item-nav" :to="item.url" @click="handleClick">
           {{ item.title }}
         </NuxtLink>
       </li>
@@ -20,7 +20,12 @@ interface Props {
   active: boolean;
 }
 
+interface Emits {
+  (event: 'update:active', value: boolean): void;
+}
+
 const props = defineProps<Props>();
+const emit = defineEmits<Emits>();
 
 const clasListActive = computed(() => props.active ? 'nav-bar-mobile--active' : '');
 
@@ -29,30 +34,34 @@ const classListModifiers = computed(() => [clasListActive.value]);
 const dataNavbar = {
   shop: {
     title: 'Shop',
-    url: '/shop',
+    url: '#',
   },
   newArrivals: {
     title: 'New Arrivals',
-    url: '/new-arrivals',
+    url: '#',
   },
   sales: {
     title: 'Sales',
-    url: '/sales',
+    url: '#',
   },
   journel: {
     title: 'Journey',
-    url: '/journel',
+    url: '#',
   },
   stores: {
     title: 'Stores',
-    url: '/stores',
+    url: '#',
   }
+}
+
+function handleClick() {
+  emit('update:active', false);
 }
 </script>
 
 <style lang="scss">
 .nav-bar-mobile {
-  background-color: $color-white-1;
+  background-color: rgb($color-white-1, 0.5);
   position: fixed;
   width: 100%;
   left: -100%;
@@ -78,9 +87,8 @@ const dataNavbar = {
 
   &__list-item-nav {
     width: 100%;
-    padding: 16px 0;
-    background-color: $color-black-1;
-    opacity: 0.7;
+    padding: 20px 0;
+    background-color: rgb($color-black-1, 0.8);
     text-align: center;
   }
 }

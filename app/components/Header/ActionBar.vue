@@ -5,21 +5,21 @@
         <IconsSearch />
       </li>
       <li class="action-bar__list-item">
-        <NuxtLink to="/stores">Stores</NuxtLink>
+        <NuxtLink to="#">Stores</NuxtLink>
       </li>
       <li class="action-bar__list-item">
-        <NuxtLink to="/">
+        <NuxtLink to="#">
           <IconsUser />
         </NuxtLink>
       </li>
       <li class="action-bar__list-item">
-        <NuxtLink class="action-bar__list-item-nav" to="/">
+        <NuxtLink class="action-bar__list-item-nav" to="#">
           <IconsHeart />
           <span class="action-bar__list-item-count">{{ 0 }}</span>
         </NuxtLink>
       </li>
       <li class="action-bar__list-item">
-        <NuxtLink class="action-bar__list-item-nav" to="/">
+        <NuxtLink class="action-bar__list-item-nav" to="#">
           <IconsBag />
           <span>{{ 2 }}</span>
         </NuxtLink>
