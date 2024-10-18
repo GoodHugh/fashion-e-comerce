@@ -30,13 +30,16 @@ interface Props {
   isOpen: boolean;
 }
 
+interface Emits {
+  (event: 'toggle'): void;
+}
+
 const props = defineProps<Props>();
+const emit = defineEmits<Emits>();
 
 const classListActive = computed(() => props.isOpen ? 'what-to-wear-now-gallery-item__product-modal--active' : '');
 
 const modalClassListModifiers = computed(() => [classListActive.value]);
-
-const emit = defineEmits(['toggle'])
 
 function toggleDropdown () {
   emit('toggle')
