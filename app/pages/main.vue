@@ -6,4 +6,12 @@ definePageMeta({
 
 <template>
   <TopBar />
+  <Header />
+  <ElevateYourStyle />
+  <ElevateLifestyle />
+  <WhatToWearNow />
+  <CollectionBanners />
+  <ArtOfFewer />
+  <ShopInstagram />
+  <Footer />
 </template>
